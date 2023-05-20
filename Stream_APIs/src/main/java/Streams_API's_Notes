@@ -1,0 +1,71 @@
+<-----Introduction------>  https://stackify.com/streams-guide-java-8/
+1.It is related to collections. to store group of data(objects) collections is used
+2.**To process the group of data(Collection) Stream APi is used
+3. in java.util.*; package it is present 
+4.we use lambda Expression of Stream (Filters & Maps)
+5.Streams provides some method to process data:-
+		Collections(Objects(o1,o2,o2))
+		
+		Collection provide two functions to process the data
+		The functions will be there in the streams class
+		1.Filter
+		2.Map
+		3.Sorted--> sort the data
+		4.Count--> return the size() of the collection
+		5.collect--> it will collect the data, the collect can be used to store the data in some Other collection or result collection
+		6.distant--> removes all the duplicates values
+		7.forEach--> read each and every element means Iterating over collection
+		8.min --> return the minimum values
+		9.max() --> return the max values
+		
+<------------  Filter ---------->
+1. filter is used to filter the data "based on condition" we can add that filtered data in another collection or use data for another purpose
+2. the number of elements can be reduces based on condition
+3.It will take predicate as a parameter
+<------------ Map ------------->
+1.In maps we we get each & every object or element " we perform based in condition on every element and store the resulted elements in another collection or use for further purpose
+2. the number of elements are same as before
+
+if there we need to use map and filter at a time first prefer filer then map
+1.collection->2.Stream->3.map->4.collect
+
+
+NOTE:- we Don't Process the data in collection directly means we don't process the data in collection it self
+       1.our collection is a source
+       2.we will add that into streams( same elements will be there in streams)
+       3.we will perform the operations in streams by filter or Map...etc
+       4.after the performing the operation in stream we can store the data in another collection
+       
+       
+<-----------***FlatMap***-------------->
+1.To deal with complex collection flatMap is best one
+2.example of complex collection is arrayList of ArrayList( 2d ArrayList);
+3.in flatMap stream it will process the data and return the collection
+4. read each element in collection and return the collection
+5.In map return single element, but in flatMap return collection of stream
+
+
+
+
+
+
+		  		non-terminal-methods		 terminal-Methods
+		  		--------------------         -------------------
+collection----->filter() 			         collect()
+				map()						 count()
+				flatMap()					 min()
+				distint()					 max()
+				limit()						 forEach()
+											 toArray()
+											 
+	
+											 
+<---------------------Parallel Streams------------->
+The powerful feature of streams is the stream pipelines may execute either sequentially or n parallel.
+All collections support the paralleStream() method that returns a possible parallel stream;
+
+Note:-when a stream executes in parallel, the java runtime divides the stream into multiple sub streams
+	  the aggregation operations iterate over and process there sub streams in parallel and then combine results
+	  
+	  Stream= (sub-stream)+(sub-stream)+(sub-stream)
+ 
